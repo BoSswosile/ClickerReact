@@ -1,5 +1,7 @@
 # ClickerReact 
 ### Création d'un jeu de type clicker pour s'amuser seul !
+
+####  L'application est exécutée sur android
 <br>
 
 ## Type de jeu
