@@ -14,6 +14,7 @@ Dans ce genre de jeux nous pouvons effectuer ce qui s'appelle un prestige ce qui
 ### 19 décembre
 
 - Login / Register
+- Création de l'api
 - Prestiges / Bonus
 - Fonctionnalité basique de clic ainsi qu'un début de visuel
 - Préparation du modèle de classement 
