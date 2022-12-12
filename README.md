@@ -1,6 +1,6 @@
 # ClickerReact 
 ### Création d'un jeu de type clicker pour s'amuser seul !
-<br/>
+<br>
 
 ## Type de jeu
 
@@ -23,5 +23,5 @@ Dans ce genre de jeux nous pouvons effectuer ce qui s'appelle un prestige ce qui
 - Visuels plus concrets
 - Affichage d'un classement
 
-et dans un second temps ameliorations ainsi que d'autres ajouts comme le classement en fonction des prestiges de tous les utilisateurs.
-
+<br>
+Je recherche encore d'autres idées si j'arrive a finir plus tôt.
