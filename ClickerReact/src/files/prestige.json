@@ -1,0 +1,19 @@
+{
+    "levels": [
+        {
+            "prestige": "1",
+            "cost": "100",
+            "multi": "0.25"
+        },
+        {
+            "prestige": "2",
+            "cost": "250",
+            "multi": "0.4"
+        },
+        {
+            "prestige": "3",
+            "cost": "600",
+            "multi": "0.7"
+        }
+    ]
+}
