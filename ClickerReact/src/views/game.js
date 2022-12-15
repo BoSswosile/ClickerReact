@@ -3,16 +3,12 @@ import {Text, TouchableOpacity, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Leaderboard from '../components/leaderboard';
 
-const Game = () => {
+const Game = ({navigation}) => {
   const [score, setScore] = React.useState(0);
   const [prestige, setPrestige] = React.useState(0);
   console.log(score);
 
-  const LeaderboardTest = () => {
-    return <Leaderboard />;
-  };
   function addScore() {
     setScore(score + 1);
   }
@@ -21,7 +17,9 @@ const Game = () => {
     <SafeAreaView onStartShouldSetResponder={addScore}>
       <ClickView>
         <BlueText>{score}</BlueText>
+        <TouchableOpacity onPress={() => navigation.navigate('Leaderboard')}>
         <TrophyIcon>Leaderboard</TrophyIcon>
+        </TouchableOpacity>
       </ClickView>
     </SafeAreaView>
   );

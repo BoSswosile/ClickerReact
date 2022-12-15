@@ -24,19 +24,25 @@ const Login = ({navigation}) => {
       return;
     }
 
-    try {
-      const response = await axios.post(
-        'http://127.0.0.1:3001/api/v1/auth/login',
-        {
-          // Data to be sent to the server
-          email: email,
-          password: password,
-        },
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+    axios({
+      method: 'post',
+      url: 'http://10.0.2.2:3001/api/v1/auth/login',
+      data: {
+        email: email,
+        password: password,
+      },
+    })
+      .then(async res => {
+        console.log(password, email);
+        console.log(res.data.token);
+        await AsyncStorage.setItem('token', res.data.token);
+        navigation.navigate('Game');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    };
+  
     /*
     axios({
       method: 'post',
@@ -55,7 +61,6 @@ const Login = ({navigation}) => {
       .catch(error => {
         console.log(error);
       });*/
-  };
 
   return (
     <View>
