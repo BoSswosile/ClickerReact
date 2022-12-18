@@ -3,7 +3,11 @@ import styled from "styled-components";
 
 //Utilisation des styled components
 export const LoginButton = styled.TouchableOpacity`
-  background-color: red;
+  align-items: center;
+  justify-content: center;
+  align-self:center;
+  width: 40%;
+  background-color: purple;
   padding: 12px;
   border-radius: 4px;
 `;
@@ -13,11 +17,23 @@ export const TextInputContainer = styled.View`
 `;
 
 export const TextInputStyled = styled.TextInput`
-  background-color: red;
+  background-color: purple;
   padding: 12px;
   border-radius: 12px;
   color: white;
 `;
+
+export const ViewMiddle = styled.View`
+justify-content: center;
+background-color: lightgray;
+width: 100%;
+height: 100%;
+`
+
+export const LoginText = styled.Text`
+font-size: 30px;
+padding-left: 10px;
+`
 
 // game
 export const ClickView = styled.View`

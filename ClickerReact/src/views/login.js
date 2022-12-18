@@ -3,7 +3,7 @@ import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import styled from 'styled-components';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { LoginButton, TextInputContainer, TextInputStyled } from '../styled/style';
+import { LoginButton, TextInputContainer, TextInputStyled, ViewMiddle, LoginText } from '../styled/style';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = React.useState('');
@@ -12,7 +12,7 @@ const Login = ({navigation}) => {
   useEffect(() => {
     AsyncStorage.getItem('token').then(token => {
       if (token) {
-        navigation.navigate('Game');
+        navigation.navigate('Auth', {screen: 'Game'});
       }
     });
   });
@@ -37,15 +37,15 @@ const Login = ({navigation}) => {
         console.log(password, email);
         console.log(res.data.token);
         await AsyncStorage.setItem('token', res.data.token);
-        navigation.navigate('Game');
+        navigation.navigate('Auth', {screen: 'Game'});
       })
       .catch(error => {
         console.log(error);
       });
     };
   return (
-    <View>
-      <Text>Login</Text>
+    <ViewMiddle>
+      <LoginText>Login</LoginText>
       <View>
         <TextInputContainer>
           <TextInputStyled
@@ -64,7 +64,7 @@ const Login = ({navigation}) => {
           <Text>Login</Text>
         </LoginButton>
       </View>
-    </View>
+    </ViewMiddle>
   );
 };
 
