@@ -3,6 +3,7 @@ import {Text, TouchableOpacity, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { BlueText, ClickView, TrophyIcon } from '../styled/style';
 
 const Game = ({navigation}) => {
   const [score, setScore] = React.useState(0);
@@ -24,24 +25,4 @@ const Game = ({navigation}) => {
     </SafeAreaView>
   );
 };
-
-const ClickView = styled.View`
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-`;
-
-const BlueText = styled.Text`
-  font-size: 30px;
-  color: blue;
-  text-align: center;
-  justify-items: center;
-`;
-
-const TrophyIcon = styled.Text`
-  color: black;
-  size: 30px;
-  text-align: right;
-  padding-right: 15px;
-`;
 export default Game;

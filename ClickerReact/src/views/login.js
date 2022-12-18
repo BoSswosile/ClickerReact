@@ -3,6 +3,7 @@ import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import styled from 'styled-components';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LoginButton, TextInputContainer, TextInputStyled } from '../styled/style';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = React.useState('');
@@ -42,26 +43,6 @@ const Login = ({navigation}) => {
         console.log(error);
       });
     };
-  
-    /*
-    axios({
-      method: 'post',
-      url: 'http://localhost:3001/api/v1/auth/login',
-      data: {
-        email: email,
-        password: password,
-      },
-    })
-      .then(async response => {
-        // console.log(response);
-        // console.log(response.headers['x-access-token']);
-        await AsyncStorage.setItem('token', response.headers['x-access-token']);
-        navigation.navigate('Game');
-      })
-      .catch(error => {
-        console.log(error);
-      });*/
-
   return (
     <View>
       <Text>Login</Text>
@@ -86,23 +67,5 @@ const Login = ({navigation}) => {
     </View>
   );
 };
-
-//Utilisation des styled components
-const LoginButton = styled.TouchableOpacity`
-  background-color: red;
-  padding: 12px;
-  border-radius: 4px;
-`;
-
-const TextInputContainer = styled.View`
-  margin: 10px;
-`;
-
-const TextInputStyled = styled.TextInput`
-  background-color: red;
-  padding: 12px;
-  border-radius: 12px;
-  color: white;
-`;
 
 export default Login;
