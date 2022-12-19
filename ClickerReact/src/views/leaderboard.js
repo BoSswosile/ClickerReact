@@ -1,15 +1,21 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, SafeAreaView, FlatList} from 'react-native';
 import styled from 'styled-components';
+import {BlueText} from '../styled/style';
 
 const Leaderboard = props => {
   const [Userinfo, setUserinfo] = useState({});
+  const obj = Userinfo;
 
   useEffect(() => {
     getLeaderboardState();
     //Runs only on the first render
   }, []);
+
+  useEffect(() => {
+    console.log(Userinfo);
+  }, [Userinfo]);
 
   const getLeaderboardState = async () => {
     try {
@@ -18,23 +24,29 @@ const Leaderboard = props => {
         url: 'http://10.0.2.2:3001/api/v1/auth/leaderboard',
         limit: 10,
       });
-      const result = await Promise.all(res.data);
-    //  console.log(res.data);
-      setUserinfo(res.data)
-      console.log(Userinfo);
+      console.log(res.data);
+      setUserinfo(res.data);
       /*  console.log(res.data);
           setUserinfo(Userinfo, ...res.data)
           console.log(Userinfo);*/
     } catch (err) {
       console.error(err);
     }
-
-    return (
-      <View>
-        <Text>noos</Text>
-      </View>
-    );
   };
+  return (
+    <SafeAreaView>
+      <View>
+        <FlatList
+          data={Object.keys(obj)}
+          renderItem={({item}) => (
+            <BlueText>
+              {obj[item].firstName} {obj[item].prestige}
+            </BlueText>
+          )}
+        />
+      </View>
+    </SafeAreaView>
+  );
 };
 /*const CheckText = styled.Text`
   color: black;

@@ -3,7 +3,15 @@ import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import styled from 'styled-components';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { LoginButton, TextInputContainer, TextInputStyled, ViewMiddle, LoginText } from '../styled/style';
+import {
+  LoginButton,
+  TextInputContainer,
+  TextInputStyled,
+  ViewMiddle,
+  LoginText,
+  ClickerImage,
+  ImageView,
+} from '../styled/style';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = React.useState('');
@@ -35,26 +43,31 @@ const Login = ({navigation}) => {
     })
       .then(async res => {
         console.log(password, email);
-        console.log(res.data.token);
+        console.log(res.data.prestige);
         await AsyncStorage.setItem('token', res.data.token);
         navigation.navigate('Auth', {screen: 'Game'});
       })
       .catch(error => {
         console.log(error);
       });
-    };
+  };
   return (
     <ViewMiddle>
+      <ImageView>
+        <ClickerImage source={require('../img/reactClicker.png')} />
+      </ImageView>
       <LoginText>Login</LoginText>
       <View>
         <TextInputContainer>
           <TextInputStyled
+            placeholder="email"
             value={email}
             onChangeText={text => setEmail(text)}
           />
         </TextInputContainer>
         <TextInputContainer>
           <TextInputStyled
+            placeholder="password"
             value={password}
             onChangeText={text => setPassword(text)}
             secureTextEntry={true}

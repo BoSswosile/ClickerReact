@@ -13,7 +13,7 @@ const PublicStack = ({navigation}) => {
 
   useEffect(() => {
     AsyncStorage.getItem('token').then(token => {
-        console.log(loading);
+      console.log(loading);
       if (token) {
         setLoading(false);
         navigation.navigate('Auth', {screen: 'Game'});
@@ -24,10 +24,7 @@ const PublicStack = ({navigation}) => {
   if (loading) {
   }
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
+    <Stack.Navigator>
       <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
     </Stack.Navigator>
   );
