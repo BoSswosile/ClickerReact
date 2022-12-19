@@ -15,6 +15,7 @@ const Settings = ({navigation}) => {
   const DisconnectClick = () => {
     navigation.navigate('Public', {screen: 'Login'});
     AsyncStorage.removeItem('token');
+    AsyncStorage.removeItem('prestige');
   };
   return (
     <ClickView>

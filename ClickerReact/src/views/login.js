@@ -43,8 +43,9 @@ const Login = ({navigation}) => {
     })
       .then(async res => {
         console.log(password, email);
-        console.log(res.data.prestige);
+        console.log(res.data.id);
         await AsyncStorage.setItem('token', res.data.token);
+        await AsyncStorage.setItem('userid', res.data.id);
         navigation.navigate('Auth', {screen: 'Game'});
       })
       .catch(error => {
