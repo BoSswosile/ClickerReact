@@ -13,10 +13,6 @@ const Leaderboard = props => {
     //Runs only on the first render
   }, []);
 
-  useEffect(() => {
-    console.log(Userinfo);
-  }, [Userinfo]);
-
   const getLeaderboardState = async () => {
     try {
       const res = await axios({
@@ -24,7 +20,6 @@ const Leaderboard = props => {
         url: 'http://10.0.2.2:3001/api/v1/auth/leaderboard',
         limit: 10,
       });
-      console.log(res.data);
       setUserinfo(res.data);
       /*  console.log(res.data);
           setUserinfo(Userinfo, ...res.data)

@@ -6,6 +6,7 @@ import {ActivityIndicator, SafeAreaView} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Game from '../views/game';
 import AuthStack from './authStack';
+import Register from '../views/register';
 const Stack = createNativeStackNavigator();
 
 const PublicStack = ({navigation}) => {
@@ -26,6 +27,11 @@ const PublicStack = ({navigation}) => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
+      <Stack.Screen
+        name="Register"
+        component={Register}
+        options={{title: 'Register'}}
+      />
     </Stack.Navigator>
   );
 };

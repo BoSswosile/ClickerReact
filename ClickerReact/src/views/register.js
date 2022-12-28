@@ -13,7 +13,9 @@ import {
   ImageView,
 } from '../styled/style';
 
-const Login = ({navigation}) => {
+const Register = ({navigation}) => {
+  const [firstName, setfirstName] = React.useState('');
+  const [lastName, setLastName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -26,8 +28,11 @@ const Login = ({navigation}) => {
   });
 
   //fonction pour récuperer un token
-  const logMeIn = async () => {
+  const RegisterMeIn = async () => {
     //Verification des champs
+    if (firstName.length < 3) {
+      alert('Firstname must be at least 3 characters long');
+    }
     if (password.length < 8) {
       alert('Password must be at least 8 characters long');
       return;
@@ -35,19 +40,16 @@ const Login = ({navigation}) => {
 
     axios({
       method: 'post',
-      url: 'http://10.0.2.2:3001/api/v1/auth/login',
+      url: 'http://10.0.2.2:3001/api/v1/auth/register',
       data: {
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         password: password,
       },
     })
       .then(async res => {
-        console.log(password, email);
-        console.log(res.data.id);
-        await AsyncStorage.setItem('token', res.data.token);
-        await AsyncStorage.setItem('userid', res.data.id);
-        console.log(AsyncStorage.getItem('userid'));
-        navigation.navigate('Auth', {screen: 'Game'});
+        navigation.navigate('Public', {screen: 'Login'});
       })
       .catch(error => {
         console.log(error);
@@ -58,7 +60,22 @@ const Login = ({navigation}) => {
       <ImageView>
         <ClickerImage source={require('../img/reactClicker.png')} />
       </ImageView>
-      <LoginText>Login</LoginText>
+      <LoginText>Register</LoginText>
+      <TextInputContainer>
+        <TextInputStyled
+          placeholder="Firstname"
+          value={firstName}
+          onChangeText={text => setfirstName(text)}
+        />
+      </TextInputContainer>
+      <TextInputContainer>
+        <TextInputStyled
+          placeholder="Lastname"
+          value={lastName}
+          onChangeText={text => setLastName(text)}
+        />
+      </TextInputContainer>
+
       <View>
         <TextInputContainer>
           <TextInputStyled
@@ -75,16 +92,12 @@ const Login = ({navigation}) => {
             secureTextEntry={true}
           />
         </TextInputContainer>
-        <LoginButton onPress={logMeIn}>
-          <Text>Login</Text>
+        <LoginButton onPress={RegisterMeIn}>
+          <Text>Register</Text>
         </LoginButton>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Public', {screen: 'Register'})}>
-          <Text>No account ? Sign up here</Text>
-        </TouchableOpacity>
       </View>
     </ViewMiddle>
   );
 };
 
-export default Login;
+export default Register;

@@ -1,0 +1,30 @@
+{
+    "items": [
+        {
+            "name":"Coin",
+            "price":"20",
+            "multi":"0.4"
+        },
+        {
+            "name":"bronze",
+            "price":"100",
+            "multi":"0.8"
+        },
+        {
+            "name":"Silver",
+            "price":"200",
+            "multi":"1.2"
+        },
+        {
+            "name":"Iron",
+            "price":"400",
+            "multi":"2"
+        },
+        {
+            "name":"Gold",
+            "price":"800",
+            "multi":"3.2"
+        }
+        
+    ]
+}

@@ -12,15 +12,16 @@ import {
 } from '../styled/style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+import GamePrestiges from '../files/prestige.json';
 
 const Game = ({navigation}) => {
-  let id = '63a070d2e275ce80f65e9e37';
+  let id = '63ac211bd72e2daa86cfe4c8';
   const [hasPassedPrestige, setHasPassedPrestige] = React.useState(false);
   const prestigeTest = 10;
   const [score, setScore] = React.useState(0);
   const [prestige, setPrestige] = React.useState(0);
   useEffect(() => {
-    if (score >= prestigeTest) {
+    if (score >= GamePrestiges.levels[prestige].cost) {
       setHasPassedPrestige(true);
     }
   }, [score]);
@@ -51,9 +52,10 @@ const Game = ({navigation}) => {
   function addPrestige() {
     setScore(0);
     setPrestige(prestige + 1);
-    console.log(prestige);
+   
     setHasPassedPrestige(false);
     AsyncStorage.setItem('prestige', prestige.toString());
+    console.log(prestige);
     axios({
       method: 'put',
       url: `http://10.0.2.2:3001/api/v1/auth/${id}`,
@@ -73,7 +75,7 @@ const Game = ({navigation}) => {
     <SafeAreaView onStartShouldSetResponder={addScore}>
       <ClickView>
         <BlueText>
-          {score}/{prestigeTest}
+          {score}/{GamePrestiges.levels[prestige].cost}
         </BlueText>
         <SettingsButton onPress={() => navigation.navigate('Settings')}>
           <TrophyIcon>Settings</TrophyIcon>
