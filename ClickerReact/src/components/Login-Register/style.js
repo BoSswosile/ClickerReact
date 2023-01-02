@@ -16,7 +16,6 @@ export const ImageView = styled.View`
   justify-content: center;
 `;
 export const ViewMiddle = styled.View`
-  justify-content: center;
   background-color: lightgray;
   width: 100%;
   height: 100%;
@@ -31,7 +30,6 @@ export const LoginText = styled.Text`
 export const ClickerImage = styled.Image`
   width: 80%;
   height: 33%;
-  align-items: center;
 `;
 export const TextInputContainer = styled.View`
   margin: 10px;
@@ -42,4 +40,9 @@ export const TextInputStyled = styled.TextInput`
   padding: 12px;
   border-radius: 12px;
   color: white;
+`;
+
+export const NoAccountText = styled.Text`
+  size: 12px;
+  color: gray;
 `;

@@ -3,8 +3,8 @@ import React, {useEffect} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ActivityIndicator, SafeAreaView} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Register from '../components/Register/register';
-import Login from '../components/Login/Login';
+import Register from '../components/Login-Register/register';
+import Login from '../components/Login-Register/login';
 const Stack = createNativeStackNavigator();
 
 const PublicStack = ({navigation}) => {
