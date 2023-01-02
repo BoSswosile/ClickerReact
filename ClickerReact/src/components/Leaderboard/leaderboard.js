@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {View, Text, SafeAreaView, FlatList} from 'react-native';
 import styled from 'styled-components';
-import {BlueText} from '../styled/style';
+import {BlueText} from '../../styled/style';
 
 const Leaderboard = props => {
   const [Userinfo, setUserinfo] = useState({});

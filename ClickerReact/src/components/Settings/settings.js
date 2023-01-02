@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styled from 'styled-components';
-import {BlueText, ClickView, Disconnect} from '../styled/style';
+import {BlueText, ClickView, Disconnect} from '../../styled/style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Settings = ({navigation}) => {

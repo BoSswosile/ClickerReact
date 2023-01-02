@@ -11,7 +11,7 @@ import {
   LoginText,
   ClickerImage,
   ImageView,
-} from '../styled/style';
+} from '../../styled/style';
 
 const Register = ({navigation}) => {
   const [firstName, setfirstName] = React.useState('');
@@ -58,7 +58,7 @@ const Register = ({navigation}) => {
   return (
     <ViewMiddle>
       <ImageView>
-        <ClickerImage source={require('../img/reactClicker.png')} />
+        <ClickerImage source={require('../../img/reactClicker.png')} />
       </ImageView>
       <LoginText>Register</LoginText>
       <TextInputContainer>

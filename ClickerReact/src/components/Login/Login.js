@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
-import styled from 'styled-components';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
@@ -11,7 +10,7 @@ import {
   LoginText,
   ClickerImage,
   ImageView,
-} from '../styled/style';
+} from './style';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = React.useState('');
@@ -46,7 +45,6 @@ const Login = ({navigation}) => {
         console.log(res.data.id);
         await AsyncStorage.setItem('token', res.data.token);
         await AsyncStorage.setItem('userid', res.data.id);
-        console.log(AsyncStorage.getItem('userid'));
         navigation.navigate('Auth', {screen: 'Game'});
       })
       .catch(error => {
@@ -56,7 +54,7 @@ const Login = ({navigation}) => {
   return (
     <ViewMiddle>
       <ImageView>
-        <ClickerImage source={require('../img/reactClicker.png')} />
+        <ClickerImage source={require('../../img/reactClicker.png')} />
       </ImageView>
       <LoginText>Login</LoginText>
       <View>

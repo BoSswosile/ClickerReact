@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Leaderboard from '../views/leaderboard';
-import Game from '../views/game';
-import Settings from '../views/settings';
+import Leaderboard from '../components/Leaderboard/leaderboard';
+import Game from '../components/Game/game';
+import Settings from '../components/Settings/settings';
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {

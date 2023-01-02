@@ -2,122 +2,122 @@
     "levels": [
         {
             "prestige": "1",
-            "cost": "100",
+            "cost": "50",
             "multi": "0.25"
         },
         {
             "prestige": "2",
-            "cost": "250",
+            "cost": "100",
             "multi": "0.5"
         },
         {
             "prestige": "3",
-            "cost": "600",
+            "cost": "250",
             "multi": "0.75"
         },
         {
             "prestige": "4",
-            "cost": "1200",
+            "cost": "600",
             "multi": "1.25"
         },
         {
             "prestige": "5",
-            "cost": "1700",
+            "cost": "1200",
             "multi": "2"
         },
         {
             "prestige": "6",
-            "cost": "2500",
+            "cost": "1700",
             "multi": "3.25"
         },
         {
             "prestige": "7",
-            "cost": "3400",
+            "cost": "2500",
             "multi": "5.25"
         },
         {
             "prestige": "8",
-            "cost": "4500",
+            "cost": "3400",
             "multi": "8.5"
         },
         {
             "prestige": "9",
-            "cost": "6000",
+            "cost": "4500",
             "multi": "13.75"
         },
         {
             "prestige": "10",
-            "cost": "8000",
+            "cost": "6000",
             "multi": "22.25"
         },
         {
             "prestige": "11",
-            "cost": "10000",
+            "cost": "8000",
             "multi": "36"
         },
         {
             "prestige": "12",
-            "cost": "12500",
+            "cost": "10000",
             "multi": "58.25"
         },
         {
             "prestige": "13",
-            "cost": "16000",
+            "cost": "12500",
             "multi": "94.25"
         },
         {
             "prestige": "14",
-            "cost": "19000",
+            "cost": "16000",
             "multi": "152.5"
         },
         {
             "prestige": "15",
-            "cost": "24000",
+            "cost": "19000",
             "multi": "246.75"
         },
         {
             "prestige": "16",
-            "cost": "30000",
+            "cost": "24000",
             "multi": "399.25"
         },
         {
             "prestige": "17",
-            "cost": "37000",
+            "cost": "30000",
             "multi": "646"
         },
         {
             "prestige": "18",
-            "cost": "48000",
+            "cost": "37000",
             "multi": "1045.25"
         },
         {
             "prestige": "19",
-            "cost": "60000",
+            "cost": "48000",
             "multi": "1691.25"
         },
         {
             "prestige": "20",
-            "cost": "75000",
+            "cost": "60000",
             "multi": "2736.5"
         },
         {
             "prestige": "21",
-            "cost": "95000",
+            "cost": "75000",
             "multi": "4427.75"
         },
         {
             "prestige": "22",
-            "cost": "120000",
+            "cost": "90000",
             "multi": "7164.25"
         },
         {
             "prestige": "23",
-            "cost": "150000",
+            "cost": "120000",
             "multi": "11592"
         },
         {
             "prestige": "24",
-            "cost": "190000",
+            "cost": "150000",
             "multi": "18756.25"
         }
     ]
