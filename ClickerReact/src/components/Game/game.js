@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {Text, TouchableOpacity, StyleSheet, View, Button} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import styled from 'styled-components';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   BlueText,
   ClickView,
@@ -108,10 +109,13 @@ const Game = ({navigation}) => {
       <ClickView>
         <BlueText>{score}</BlueText>
         <SettingsButton onPress={() => navigation.navigate('Settings')}>
-          <TrophyIcon>Settings</TrophyIcon>
+          <Ionicons
+            name="settings-outline"
+            size={40}
+            color="#868b8b"></Ionicons>
         </SettingsButton>
         <LeaderboardButton onPress={() => navigation.navigate('Leaderboard')}>
-          <TrophyIcon>Leaderboard</TrophyIcon>
+          <EntypoIcon name="trophy" size={40} color="#868b8b"></EntypoIcon>
         </LeaderboardButton>
       </ClickView>
       {hasPassedPrestige ? (
