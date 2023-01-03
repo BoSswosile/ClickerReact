@@ -2,7 +2,7 @@ import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Leaderboard from '../components/Leaderboard/leaderboard';
-import Game from '../components/Game/Game';
+import Game from '../components/Game/game';
 import Settings from '../components/Settings/settings';
 const Stack = createNativeStackNavigator();
 

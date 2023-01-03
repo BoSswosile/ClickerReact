@@ -4,13 +4,16 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import styled from 'styled-components';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {} from '../../styled/style';
 import {
+  ItemCost,
+  PrestigeCost,
+  TouchableElements,
   BlueText,
   ClickView,
   LeaderboardButton,
   SettingsButton,
-  TrophyIcon,
-} from '../../styled/style';
+} from './style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import GamePrestiges from '../../files/prestige.json';
@@ -135,26 +138,5 @@ const Game = ({navigation}) => {
     </SafeAreaView>
   );
 };
-
-const TouchableElements = styled.TouchableOpacity`
-  bottom: 2%;
-`;
-
-const PrestigeCost = styled.Text`
-  position: absolute;
-  font-size: 20px;
-  right: 0;
-  bottom: 2%;
-  padding-right: 50px;
-  color: grey;
-`;
-
-const ItemCost = styled.Text`
-  position: absolute;
-  font-size: 20px;
-  bottom: 2%;
-  align-self: center;
-  color: grey;
-`;
 
 export default Game;

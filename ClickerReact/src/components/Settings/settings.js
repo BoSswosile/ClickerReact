@@ -1,15 +1,13 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {
-  View,
-  Text,
-  SafeAreaView,
-  FlatList,
   TouchableOpacity,
+  View
 } from 'react-native';
 import styled from 'styled-components';
-import {BlueText, ClickView, Disconnect} from '../../styled/style';
+import {Disconnect, ViewGlobal} from './style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Settings = ({navigation}) => {
   const DisconnectClick = () => {
@@ -18,12 +16,13 @@ const Settings = ({navigation}) => {
     AsyncStorage.removeItem('prestige');
   };
   return (
-    <ClickView>
-      <BlueText>Test</BlueText>
+    <SafeAreaView>
+      <ViewGlobal>
       <TouchableOpacity onPress={DisconnectClick}>
         <Disconnect>Se déconnecter</Disconnect>
       </TouchableOpacity>
-    </ClickView>
+      </ViewGlobal>
+    </SafeAreaView>
   );
 };
 

@@ -29,6 +29,21 @@
             "name": "Gold",
             "cost": "800",
             "multi": "3.2"
+        },
+        {
+            "name": "Diamond",
+            "cost": "1200",
+            "multi": "5"
+        },
+        {
+            "name": "Emerald",
+            "cost": "1800",
+            "multi": "10"
+        },
+        {
+            "name": "Goldbar",
+            "cost": "2500",
+            "multi": "20"
         }
     ]
 }

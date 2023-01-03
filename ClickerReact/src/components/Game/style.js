@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-// login
 
-//Utilisation des styled components
-
-// game
 export const ClickView = styled.View`
   height: 100%;
   width: 100%;
@@ -35,17 +31,23 @@ export const SettingsButton = styled.TouchableOpacity`
   margin-right: 10px;
 `;
 
-// Settings
-
-export const Disconnect = styled.Text`
-  position: absolute;
-  color: grey;
-  font-size: 20px;
-  align-self: center;
+export const TouchableElements = styled.TouchableOpacity`
+  bottom: 2%;
 `;
-export const TouchableDisconnect = styled.TouchableOpacity`
+
+export const PrestigeCost = styled.Text`
   position: absolute;
-  bottom: 0;
-  justify-content: center;
-  align-content: center;
+  font-size: 20px;
+  right: 0;
+  bottom: 2%;
+  padding-right: 50px;
+  color: grey;
+`;
+
+export const ItemCost = styled.Text`
+  position: absolute;
+  font-size: 20px;
+  bottom: 2%;
+  align-self: center;
+  color: grey;
 `;
