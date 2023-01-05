@@ -10,7 +10,9 @@ export const ClickView = styled.View`
 export const BlueText = styled.Text`
   font-size: 30px;
   color: blue;
+  align-self: center;
   text-align: center;
+  position: absolute
 `;
 
 export const TrophyIcon = styled.Text`
@@ -51,3 +53,4 @@ export const ItemCost = styled.Text`
   align-self: center;
   color: grey;
 `;
+

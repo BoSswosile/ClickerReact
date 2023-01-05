@@ -1,10 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {Text, TouchableOpacity, StyleSheet, View, Button} from 'react-native';
+import React, {createContext, useEffect, useState} from 'react';
+import {
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  View,
+  Button,
+  Dimensions,
+  Alert,
+} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import styled from 'styled-components';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {} from '../../styled/style';
 import {
   ItemCost,
   PrestigeCost,
@@ -19,14 +26,19 @@ import axios from 'axios';
 import GamePrestiges from '../../files/prestige.json';
 import items from '../../files/items.json';
 
-const Game = ({navigation}) => {
-  let id = '63ac211bd72e2daa86cfe4c8';
+export const ValuesContext = createContext();
+
+const Game = ({navigation, children}) => {
   const [isClicked, setIsClicked] = React.useState(false);
   const [hasPassedPrestige, setHasPassedPrestige] = React.useState(false);
   const [hasPassedItem, setHasPassedItem] = React.useState(false);
   const [itemLevel, setItemLevel] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [prestige, setPrestige] = React.useState(0);
+  const [position, setPosition] = useState({x: 0, y: 0});
+  const [clickVisible, setClickVisible] = useState(true);
+  const [dimensions, setDimensions] = useState();
+  const [addedScore, setAddedScore] = useState(null);
 
   useEffect(() => {
     if (isClicked) {
@@ -66,6 +78,13 @@ const Game = ({navigation}) => {
   }, [itemLevel, prestige, score]);
 
   useEffect(() => {
+    console.log(Dimensions.get('window').width);
+    console.log(Dimensions.get('window').height);
+    const dims = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    };
+    setDimensions(dims);
     // console.log(AsyncStorage.getItem('userid'));
     AsyncStorage.getItem('userid').then(resid => {
       axios({
@@ -86,15 +105,51 @@ const Game = ({navigation}) => {
           console.log(Userinfo);*/
   }, []);
   function addScore() {
-    setScore(
-      score +
-        1 *
-          (Number(GamePrestiges.levels[prestige].multi) +
-            Number(items.items[itemLevel].multi)),
+    setClickVisible(true);
+    setAddedScore(
+      1 *
+        (Number(GamePrestiges.levels[prestige].multi) +
+          Number(items.items[itemLevel].multi)),
     );
+    setScore(
+      Math.round(
+        (score +
+          1 *
+            (Number(GamePrestiges.levels[prestige].multi) +
+              Number(items.items[itemLevel].multi))) *
+          100,
+      ) / 100,
+    );
+    const x =
+      Math.floor(Math.random() * ((dimensions.width / 100) * 80 - 10 + 1)) + 10;
+    const y =
+      Math.floor(Math.random() * ((dimensions.height / 100) * 80 - 10 + 1)) +
+      10;
+    setPosition({x, y});
+    setTimeout(() => {
+      setClickVisible(false);
+    }, 1000);
   }
 
   function addPrestige() {
+    if (prestige == 0) {
+      let prestigeValidate = false;
+      Alert.alert(
+        'Prestige',
+        'Prestige resets everything'[
+          ({
+            text: 'Cancel',
+            onPress: () => console.log('Did not understand the rules'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => (prestigeValidate = true)})
+        ],
+      );
+      if ((prestigeValidate = false)) {
+        return;
+      }
+    }
+
     setItemLevel(0);
     setHasPassedPrestige(false);
     setScore(0);
@@ -120,6 +175,11 @@ const Game = ({navigation}) => {
         <LeaderboardButton onPress={() => navigation.navigate('Leaderboard')}>
           <EntypoIcon name="trophy" size={40} color="#868b8b"></EntypoIcon>
         </LeaderboardButton>
+        {clickVisible && (
+          <BlueText style={{left: position.x, top: position.y}}>
+            + {addedScore}
+          </BlueText>
+        )}
       </ClickView>
       {hasPassedPrestige ? (
         <TouchableElements onPress={addPrestige}>
