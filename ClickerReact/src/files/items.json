@@ -44,6 +44,16 @@
             "name": "Goldbar",
             "cost": "2500",
             "multi": "20"
+        },
+        {
+            "name": "GoldWatch",
+            "cost": "3500",
+            "multi": "40"
+        },
+        {
+            "name": "Goldbar",
+            "cost": "5000",
+            "multi": "80"
         }
     ]
 }

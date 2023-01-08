@@ -11,6 +11,7 @@ import {
   LoginText,
   ClickerImage,
   ImageView,
+  CompleteView,
 } from './style';
 
 const Register = ({navigation}) => {
@@ -64,42 +65,44 @@ const Register = ({navigation}) => {
       <ImageView>
         <ClickerImage source={require('../../img/reactClicker.png')} />
       </ImageView>
-      <LoginText>Register</LoginText>
-      <TextInputContainer>
-        <TextInputStyled
-          placeholder="Firstname"
-          value={firstName}
-          onChangeText={text => setfirstName(text)}
-        />
-      </TextInputContainer>
-      <TextInputContainer>
-        <TextInputStyled
-          placeholder="Lastname"
-          value={lastName}
-          onChangeText={text => setLastName(text)}
-        />
-      </TextInputContainer>
+      <CompleteView>
+        <LoginText>Register</LoginText>
+        <TextInputContainer>
+          <TextInputStyled
+            placeholder="Firstname"
+            value={firstName}
+            onChangeText={text => setfirstName(text)}
+          />
+        </TextInputContainer>
+        <TextInputContainer>
+          <TextInputStyled
+            placeholder="Lastname"
+            value={lastName}
+            onChangeText={text => setLastName(text)}
+          />
+        </TextInputContainer>
 
-      <View>
-        <TextInputContainer>
-          <TextInputStyled
-            placeholder="email"
-            value={email}
-            onChangeText={text => setEmail(text)}
-          />
-        </TextInputContainer>
-        <TextInputContainer>
-          <TextInputStyled
-            placeholder="password"
-            value={password}
-            onChangeText={text => setPassword(text)}
-            secureTextEntry={true}
-          />
-        </TextInputContainer>
-        <LoginButton onPress={RegisterMeIn}>
-          <Text>Register</Text>
-        </LoginButton>
-      </View>
+        <View>
+          <TextInputContainer>
+            <TextInputStyled
+              placeholder="email"
+              value={email}
+              onChangeText={text => setEmail(text)}
+            />
+          </TextInputContainer>
+          <TextInputContainer>
+            <TextInputStyled
+              placeholder="password"
+              value={password}
+              onChangeText={text => setPassword(text)}
+              secureTextEntry={true}
+            />
+          </TextInputContainer>
+          <LoginButton onPress={RegisterMeIn}>
+            <Text>Register</Text>
+          </LoginButton>
+        </View>
+      </CompleteView>
     </ViewMiddle>
   );
 };

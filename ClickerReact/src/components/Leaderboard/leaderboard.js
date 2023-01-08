@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {View, Text, SafeAreaView, FlatList} from 'react-native';
 import styled from 'styled-components';
-import {BlueText} from './style';
+import {BlueText, Name, Prestige, GreyText, HorizonView} from './style';
 
 const Leaderboard = props => {
   const [Userinfo, setUserinfo] = useState({});
@@ -31,22 +31,19 @@ const Leaderboard = props => {
   return (
     <SafeAreaView>
       <View>
+        <GreyText>    Name           Prestige</GreyText>
         <FlatList
           data={Object.keys(obj)}
           renderItem={({item}) => (
-            <BlueText>
-              {obj[item].firstName} {obj[item].prestige}
-            </BlueText>
+            <HorizonView>
+              <Name>{obj[item].firstName}</Name>
+              <Prestige>{obj[item].prestige}</Prestige>
+            </HorizonView>
           )}
         />
       </View>
     </SafeAreaView>
   );
 };
-/*const CheckText = styled.Text`
-  color: black;
-  size: 30px;
-  text-align: right;
-  padding-right: 15px;
-`;*/
+
 export default Leaderboard;

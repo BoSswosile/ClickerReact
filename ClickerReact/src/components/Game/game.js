@@ -19,6 +19,8 @@ import {
   ClickView,
   LeaderboardButton,
   SettingsButton,
+  NextItem,
+  NextPrestige,
 } from './style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
@@ -33,7 +35,7 @@ const Game = ({navigation}) => {
   const [itemLevel, setItemLevel] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [prestige, setPrestige] = React.useState(0);
-  const [position, setPosition] = useState({x: 0, y: 0});
+  const [position, setPosition] = useState({x: -20, y: -20});
   const [clickVisible, setClickVisible] = useState(true);
   const [dimensions, setDimensions] = useState();
   const [addedScore, setAddedScore] = useState(null);
@@ -146,20 +148,22 @@ const Game = ({navigation}) => {
       <ClickView>
         <BlueText>{score}</BlueText>
         <Menuicons navigation={navigation} />
+        <NextItem>Next Item</NextItem>
+        <NextPrestige>Next Prestige</NextPrestige>
         {hasPassedPrestige ? (
-        <TouchableElements onPress={addPrestige}>
+          <TouchableElements onPress={addPrestige}>
+            <PrestigeCost>{GamePrestiges.levels[prestige].cost}</PrestigeCost>
+          </TouchableElements>
+        ) : (
           <PrestigeCost>{GamePrestiges.levels[prestige].cost}</PrestigeCost>
-        </TouchableElements>
-      ) : (
-        <PrestigeCost>{GamePrestiges.levels[prestige].cost}</PrestigeCost>
-      )}
-      {hasPassedItem ? (
-        <TouchableElements onPress={addItem}>
+        )}
+        {hasPassedItem ? (
+          <TouchableElements onPress={addItem}>
+            <ItemCost>{items.items[itemLevel + 1].cost}</ItemCost>
+          </TouchableElements>
+        ) : (
           <ItemCost>{items.items[itemLevel + 1].cost}</ItemCost>
-        </TouchableElements>
-      ) : (
-        <ItemCost>{items.items[itemLevel + 1].cost}</ItemCost>
-      )}
+        )}
         {clickVisible && (
           <BlueText style={{left: position.x, top: position.y}}>
             + {addedScore}

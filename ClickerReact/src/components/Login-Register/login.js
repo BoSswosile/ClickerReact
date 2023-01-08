@@ -18,6 +18,7 @@ import {
   ClickerImage,
   ImageView,
   NoAccountText,
+  ViewLogin,
 } from './style';
 
 const Login = ({navigation}) => {
@@ -62,35 +63,34 @@ const Login = ({navigation}) => {
   };
   return (
     <ViewMiddle>
-        <ImageView>
-          <ClickerImage source={require('../../img/reactClicker.png')} />
-        </ImageView>
+      <ImageView>
+        <ClickerImage source={require('../../img/reactClicker.png')} />
+      </ImageView>
+      <ViewLogin>
         <LoginText>Login</LoginText>
-        <View>
-          <TextInputContainer>
-            <TextInputStyled
-              placeholder="email"
-              value={email}
-              onChangeText={text => setEmail(text)}
-            />
-          </TextInputContainer>
-          <TextInputContainer>
-            <TextInputStyled
-              placeholder="password"
-              value={password}
-              onChangeText={text => setPassword(text)}
-              secureTextEntry={true}
-            />
-          </TextInputContainer>
+        <TextInputContainer>
+          <TextInputStyled
+            placeholder="email"
+            value={email}
+            onChangeText={text => setEmail(text)}
+          />
+        </TextInputContainer>
+        <TextInputContainer>
+          <TextInputStyled
+            placeholder="password"
+            value={password}
+            onChangeText={text => setPassword(text)}
+            secureTextEntry={true}
+          />
+        </TextInputContainer>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Public', {screen: 'Register'})}>
           <NoAccountText>No account ? Sign up here</NoAccountText>
-          <LoginButton onPress={logMeIn}>
-            <Text>Login</Text>
-          </LoginButton>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('Public', {screen: 'Register'})
-            }></TouchableOpacity>
-        </View>
+        </TouchableOpacity>
+        <LoginButton onPress={logMeIn}>
+          <Text>Login</Text>
+        </LoginButton>
+      </ViewLogin>
     </ViewMiddle>
   );
 };

@@ -12,7 +12,7 @@ export const BlueText = styled.Text`
   color: blue;
   align-self: center;
   text-align: center;
-  position: absolute
+  position: absolute;
 `;
 
 export const TrophyIcon = styled.Text`
@@ -38,6 +38,23 @@ export const ItemCost = styled.Text`
   position: absolute;
   font-size: 20px;
   bottom: 2%;
+  align-self: center;
+  color: grey;
+`;
+
+export const NextPrestige = styled.Text`
+  position: absolute;
+  font-size: 13px;
+  right: 0;
+  bottom: 7%;
+  padding-right: 28px;
+  color: grey;
+`;
+
+export const NextItem = styled.Text`
+  position: absolute;
+  font-size: 13px;
+  bottom: 7%;
   align-self: center;
   color: grey;
 `;

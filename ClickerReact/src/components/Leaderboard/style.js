@@ -1,7 +1,28 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const BlueText = styled.Text`
+export const GreyText = styled.Text`
+  top: 5%;
   font-size: 30px;
-  color: blue;
+  color: gray;
   text-align: center;
+`;
+
+export const HorizonView = styled.View`
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  top: 10%;
+  flex: 1;
+  justify-content: space-between;
+`;
+
+export const Name = styled.Text`
+  font-size: 30px;
+  text-align: center;
+  padding-left: 90px;
+`;
+export const Prestige = styled.Text`
+  font-size: 30px;
+  text-align: center;
+  padding-right: 90px;
 `;

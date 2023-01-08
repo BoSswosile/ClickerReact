@@ -5,18 +5,25 @@ export const LoginButton = styled.TouchableOpacity`
   justify-content: center;
   align-self: center;
   width: 40%;
+  top: 3%;
   background-color: purple;
   padding: 12px;
   border-radius: 4px;
+  padding-top: 10px;
 `;
 
 export const ImageView = styled.View`
-  width: 100%;
   align-items: center;
   padding-top: 10%;
 `;
 export const ViewMiddle = styled.View`
   background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+`;
+
+export const ViewLogin = styled.View`
   width: 100%;
   height: 100%;
   flex: 1;
@@ -46,4 +53,13 @@ export const TextInputStyled = styled.TextInput`
 export const NoAccountText = styled.Text`
   size: 12px;
   color: gray;
+  text-align: right;
+  padding-right: 20px;
+`;
+
+export const CompleteView = styled.View`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  bottom: 10%;
 `;
