@@ -23,7 +23,10 @@ const PublicStack = ({navigation}) => {
   if (loading) {
   }
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
       <Stack.Screen
         name="Register"

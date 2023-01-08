@@ -20,18 +20,6 @@ export const TrophyIcon = styled.Text`
   font-size: 15px;
   padding-right: 15px;
 `;
-export const LeaderboardButton = styled.TouchableOpacity`
-  position: absolute;
-  right: 0;
-  top: 10%;
-  padding-right: 10px;
-`;
-export const SettingsButton = styled.TouchableOpacity`
-  position: absolute;
-  right: 0;
-  top: 2%;
-  margin-right: 10px;
-`;
 
 export const TouchableElements = styled.TouchableOpacity`
   bottom: 2%;
@@ -53,4 +41,3 @@ export const ItemCost = styled.Text`
   align-self: center;
   color: grey;
 `;
-

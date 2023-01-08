@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {Alert, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {
+  Alert,
+  KeyboardAvoidingView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
@@ -55,34 +62,35 @@ const Login = ({navigation}) => {
   };
   return (
     <ViewMiddle>
-      <ImageView>
-        <ClickerImage source={require('../../img/reactClicker.png')} />
-      </ImageView>
-      <LoginText>Login</LoginText>
-      <View>
-        <TextInputContainer>
-          <TextInputStyled
-            placeholder="email"
-            value={email}
-            onChangeText={text => setEmail(text)}
-          />
-        </TextInputContainer>
-        <TextInputContainer>
-          <TextInputStyled
-            placeholder="password"
-            value={password}
-            onChangeText={text => setPassword(text)}
-            secureTextEntry={true}
-          />
-        </TextInputContainer>
-        <LoginButton onPress={logMeIn}>
-          <Text>Login</Text>
-        </LoginButton>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Public', {screen: 'Register'})}>
+        <ImageView>
+          <ClickerImage source={require('../../img/reactClicker.png')} />
+        </ImageView>
+        <LoginText>Login</LoginText>
+        <View>
+          <TextInputContainer>
+            <TextInputStyled
+              placeholder="email"
+              value={email}
+              onChangeText={text => setEmail(text)}
+            />
+          </TextInputContainer>
+          <TextInputContainer>
+            <TextInputStyled
+              placeholder="password"
+              value={password}
+              onChangeText={text => setPassword(text)}
+              secureTextEntry={true}
+            />
+          </TextInputContainer>
           <NoAccountText>No account ? Sign up here</NoAccountText>
-        </TouchableOpacity>
-      </View>
+          <LoginButton onPress={logMeIn}>
+            <Text>Login</Text>
+          </LoginButton>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('Public', {screen: 'Register'})
+            }></TouchableOpacity>
+        </View>
     </ViewMiddle>
   );
 };

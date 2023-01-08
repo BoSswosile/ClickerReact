@@ -8,7 +8,10 @@ const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="Game" component={Game} options={{title: 'Game'}} />
       <Stack.Screen
         name="Settings"

@@ -13,18 +13,19 @@ export const LoginButton = styled.TouchableOpacity`
 export const ImageView = styled.View`
   width: 100%;
   align-items: center;
-  justify-content: center;
+  padding-top: 10%;
 `;
 export const ViewMiddle = styled.View`
   background-color: lightgray;
   width: 100%;
   height: 100%;
+  flex: 1;
 `;
 
 export const LoginText = styled.Text`
   font-size: 30px;
   padding-left: 10px;
-  color: gray;
+  color: grey;
 `;
 
 export const ClickerImage = styled.Image`
