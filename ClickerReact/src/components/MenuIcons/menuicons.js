@@ -1,8 +1,7 @@
 import React from 'react';
-import {View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
-import { SettingsButton, LeaderboardButton, FullView } from './style';
+import {SettingsButton, LeaderboardButton, FullView} from './style';
 
 export default MenuIcons = ({navigation}) => {
   return (

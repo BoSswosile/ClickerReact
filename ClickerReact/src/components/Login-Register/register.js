@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
-import styled from 'styled-components';
+import {Text, View} from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
@@ -27,10 +26,7 @@ const Register = ({navigation}) => {
       }
     });
   });
-
-  //fonction pour récuperer un token
   const RegisterMeIn = async () => {
-    //Verification des champs
     if (firstName.length < 3) {
       alert('Firstname must be at least 3 characters long');
     }

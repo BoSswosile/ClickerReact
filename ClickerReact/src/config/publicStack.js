@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {ActivityIndicator, SafeAreaView} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Register from '../components/Login-Register/register';
 import Login from '../components/Login-Register/login';
@@ -12,7 +11,6 @@ const PublicStack = ({navigation}) => {
 
   useEffect(() => {
     AsyncStorage.getItem('token').then(token => {
-      console.log(loading);
       if (token) {
         setLoading(false);
         navigation.navigate('Auth', {screen: 'Game'});

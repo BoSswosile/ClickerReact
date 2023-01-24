@@ -1,13 +1,8 @@
-import axios from 'axios';
-import React, {useEffect, useState} from 'react';
-import {
-  TouchableOpacity,
-  View
-} from 'react-native';
-import styled from 'styled-components';
+import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import {Disconnect, ViewGlobal} from './style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Settings = ({navigation}) => {
   const DisconnectClick = () => {
@@ -18,9 +13,9 @@ const Settings = ({navigation}) => {
   return (
     <SafeAreaView>
       <ViewGlobal>
-      <TouchableOpacity onPress={DisconnectClick}>
-        <Disconnect>Se déconnecter</Disconnect>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={DisconnectClick}>
+          <Disconnect>Se déconnecter</Disconnect>
+        </TouchableOpacity>
       </ViewGlobal>
     </SafeAreaView>
   );
