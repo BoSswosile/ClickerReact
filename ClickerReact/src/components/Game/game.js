@@ -27,6 +27,7 @@ import axios from 'axios';
 import GamePrestiges from '../../files/prestige.json';
 import items from '../../files/items.json';
 import Menuicons from '../MenuIcons/menuicons';
+import Notification from '../Notifications/notification';
 
 const Game = ({navigation}) => {
   const [isClicked, setIsClicked] = React.useState(false);
@@ -136,6 +137,7 @@ const Game = ({navigation}) => {
     setScore(0);
     setIsClicked(true);
     setPrestige(prestige + 1);
+   // Notification();
   };
 
   function addItem() {
