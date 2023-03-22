@@ -1,8 +1,13 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {View, Text, SafeAreaView, FlatList} from 'react-native';
-import styled from 'styled-components';
-import {BlueText, Name, Prestige, GreyText, HorizonView} from './style';
+import {View, SafeAreaView, FlatList} from 'react-native';
+import {
+  Name,
+  Prestige,
+  HorizonView,
+  NameAbsolute,
+  PrestigeAbsolute,
+} from './style';
 
 const Leaderboard = props => {
   const [Userinfo, setUserinfo] = useState({});
@@ -10,7 +15,6 @@ const Leaderboard = props => {
 
   useEffect(() => {
     getLeaderboardState();
-    //Runs only on the first render
   }, []);
 
   const getLeaderboardState = async () => {
@@ -21,9 +25,6 @@ const Leaderboard = props => {
         limit: 10,
       });
       setUserinfo(res.data);
-      /*  console.log(res.data);
-          setUserinfo(Userinfo, ...res.data)
-          console.log(Userinfo);*/
     } catch (err) {
       console.error(err);
     }

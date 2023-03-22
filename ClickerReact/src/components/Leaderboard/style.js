@@ -28,3 +28,17 @@ export const Prestige = styled.Text`
   text-align: center;
   padding-right: 90px;
 `;
+export const NameAbsolute = styled.Text`
+  position: absolute;
+  right: 20%;
+  font-size: 30px;
+  text-align: center;
+  padding-left: 90px;
+`;
+export const PrestigeAbsolute = styled.Text`
+  position: absolute;
+  left: 20%;
+  font-size: 30px;
+  text-align: center;
+  padding-right: 90px;
+`;

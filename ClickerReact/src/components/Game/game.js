@@ -1,24 +1,12 @@
-import React, {createContext, useEffect, useState} from 'react';
-import {
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  View,
-  Button,
-  Dimensions,
-  Alert,
-} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Dimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import styled from 'styled-components';
-
 import {
   ItemCost,
   PrestigeCost,
   TouchableElements,
   BlueText,
   ClickView,
-  LeaderboardButton,
-  SettingsButton,
   NextItem,
   NextPrestige,
   Title,
@@ -28,6 +16,7 @@ import axios from 'axios';
 import GamePrestiges from '../../files/prestige.json';
 import items from '../../files/items.json';
 import Menuicons from '../MenuIcons/menuicons';
+import Notification from '../Notifications/notification';
 
 const Game = ({navigation}) => {
   const [isClicked, setIsClicked] = React.useState(false);
@@ -44,7 +33,6 @@ const Game = ({navigation}) => {
   useEffect(() => {
     if (isClicked) {
       AsyncStorage.setItem('prestige', prestige.toString());
-      console.log(prestige);
       AsyncStorage.getItem('userid').then(resid => {
         axios({
           method: 'put',
@@ -54,7 +42,6 @@ const Game = ({navigation}) => {
           },
         })
           .then(res => {
-            console.log(res.data.prestige);
           })
           .catch(err => {
             console.log(err);
@@ -82,7 +69,6 @@ const Game = ({navigation}) => {
       height: Dimensions.get('window').height,
     };
     setDimensions(dims);
-    // console.log(AsyncStorage.getItem('userid'));
     AsyncStorage.getItem('userid').then(resid => {
       axios({
         method: 'get',
@@ -96,10 +82,6 @@ const Game = ({navigation}) => {
           console.log(err);
         });
     });
-
-    /*  console.log(res.data);
-          setUserinfo(Userinfo, ...res.data)
-          console.log(Userinfo);*/
   }, []);
   function addScore() {
     setClickVisible(true);
@@ -134,6 +116,7 @@ const Game = ({navigation}) => {
     setItemLevel(0);
     setIsClicked(true);
     setPrestige(prestige + 1);
+    Notification();
   };
 
   function addItem() {

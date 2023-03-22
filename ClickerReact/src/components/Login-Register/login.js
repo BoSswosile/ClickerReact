@@ -1,12 +1,5 @@
 import React, {useEffect} from 'react';
-import {
-  Alert,
-  KeyboardAvoidingView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
@@ -33,9 +26,7 @@ const Login = ({navigation}) => {
     });
   });
 
-  //fonction pour récuperer un token
   const logMeIn = async () => {
-    //Verification des champs
     if (password.length < 8) {
       alert('Password must be at least 8 characters long');
       return;
@@ -50,8 +41,6 @@ const Login = ({navigation}) => {
       },
     })
       .then(async res => {
-        console.log(password, email);
-        console.log(res.data.id);
         await AsyncStorage.setItem('token', res.data.token);
         await AsyncStorage.setItem('userid', res.data.id);
         navigation.navigate('Auth', {screen: 'Game'});
