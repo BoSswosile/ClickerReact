@@ -54,6 +54,21 @@
             "name": "Goldbar",
             "cost": "5000",
             "multi": "80"
+        },
+        {
+            "name": "test",
+            "cost": "8000",
+            "multi": "160"
+        },
+        {
+            "name": "Goldbar",
+            "cost": "12000",
+            "multi": "320"
+        },
+        {
+            "name": "Goldbar",
+            "cost": "18000",
+            "multi": "640"
         }
     ]
 }

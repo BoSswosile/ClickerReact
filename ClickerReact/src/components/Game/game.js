@@ -21,6 +21,7 @@ import {
   SettingsButton,
   NextItem,
   NextPrestige,
+  Title,
 } from './style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
@@ -39,7 +40,6 @@ const Game = ({navigation}) => {
   const [clickVisible, setClickVisible] = useState(true);
   const [dimensions, setDimensions] = useState();
   const [addedScore, setAddedScore] = useState(null);
-  const [prestigeValidate, setPrestigeValidate] = useState(false);
 
   useEffect(() => {
     if (isClicked) {
@@ -129,11 +129,9 @@ const Game = ({navigation}) => {
   }
 
   const addPrestige = async () => {
-    if (prestigeValidate == false || prestige == 0) {
-      return;
-    }
     setHasPassedPrestige(false);
     setScore(0);
+    setItemLevel(0);
     setIsClicked(true);
     setPrestige(prestige + 1);
   };
@@ -146,6 +144,7 @@ const Game = ({navigation}) => {
   return (
     <SafeAreaView onStartShouldSetResponder={addScore}>
       <ClickView>
+        <Title>ReactClicker</Title>
         <BlueText>{score}</BlueText>
         <Menuicons navigation={navigation} />
         <NextItem>Next Item</NextItem>

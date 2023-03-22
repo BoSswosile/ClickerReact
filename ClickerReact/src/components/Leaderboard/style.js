@@ -17,11 +17,13 @@ export const HorizonView = styled.View`
 `;
 
 export const Name = styled.Text`
+  color: grey;
   font-size: 30px;
   text-align: center;
   padding-left: 90px;
 `;
 export const Prestige = styled.Text`
+  color: grey;
   font-size: 30px;
   text-align: center;
   padding-right: 90px;

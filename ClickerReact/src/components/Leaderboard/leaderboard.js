@@ -31,7 +31,7 @@ const Leaderboard = props => {
   return (
     <SafeAreaView>
       <View>
-        <GreyText>    Name           Prestige</GreyText>
+        <GreyText>    Name          Prestige</GreyText>
         <FlatList
           data={Object.keys(obj)}
           renderItem={({item}) => (

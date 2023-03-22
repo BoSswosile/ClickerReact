@@ -58,3 +58,12 @@ export const NextItem = styled.Text`
   align-self: center;
   color: grey;
 `;
+
+export const Title = styled.Text`
+  position: absolute;
+  font-size: 25px;
+  font-weight: bold;
+  color: grey;
+  top: 2%;
+  padding-left: 15px;
+`;
