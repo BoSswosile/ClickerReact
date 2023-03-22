@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {View, SafeAreaView, FlatList} from 'react-native';
+import {GreyText} from './style';
 import {
   Name,
   Prestige,
